@@ -91,7 +91,7 @@
     //style.display = "flex";
     style.width = "100%";
     style.height = "fit-content";
-    style.backgroundColor = "#CC33CC";
+    //style.backgroundColor = "#CC33CC";
     style.justifyContent = "center";
     style.alignItems = "center";
     style.flexDirection = "column";
@@ -101,7 +101,7 @@
     style = preview.style;
     style.display = "flex";
     style.width = "100%";
-    style.backgroundColor = "#cc88cc";
+    //style.backgroundColor = "#cc88cc";
 
     let prevA = document.createElement("div");
     style = prevA.style;
@@ -111,7 +111,7 @@
     style.height = "fit-content";
     style.paddingRight = 16;
     style.boxSizing = "border-box";
-    style.backgroundColor = "#cc8855";
+    //style.backgroundColor = "#cc8855";
 
     let imgA = document.createElement("img");
 
@@ -123,7 +123,7 @@
     style.height = "fit-content";
     style.paddingLeft = 16;
     style.boxSizing = "border-box";
-    style.backgroundColor = "#aa6633";
+    //style.backgroundColor = "#aa6633";
 
     let imgB = document.createElement("img");
 
@@ -147,7 +147,7 @@
 
         let box_bgResCol = document.createElement("span");
         style = box_bgResCol.style;
-        style.backgroundColor = "red";
+        //style.backgroundColor = "red";
         style.display = "inline-block";
         
   
@@ -165,7 +165,7 @@
 
         let box_diffResCol = document.createElement("span");
         style = box_diffResCol.style;
-        style.backgroundColor = "blue";
+        //style.backgroundColor = "blue";
         style.display = "inline-block";
 
 
@@ -205,9 +205,6 @@
     mainArea.appendChild(compareButton);
     mainArea.appendChild(processPanel);
 
-
-    
-
     document.body.appendChild(mainArea);
 
 
@@ -243,8 +240,6 @@
             files['slot'+slot].style.backgroundImage = `url(${src})`;
             files['img'+slot].src = src;
             files['set'+slot] = true;
-
-            //files['src'+slot] = src;
         });
         
         let file = e.dataTransfer.files[0];
@@ -287,9 +282,6 @@
         let resultBuffer = ctx.createImageData(wA, hA);
         let C = resultBuffer.data;
 
-        /*ctx.fillStyle = bgResColor.value;
-        ctx.fillRect(0,0, wA,hA);*/
-
         let c = diffResColor.value;
         let rDiff = parseInt(c[1]+c[2], 16);
         let gDiff = parseInt(c[3]+c[4], 16);
@@ -310,7 +302,6 @@
             iB = (y * wB) + x;
             iB *= 4;
 
-            //diff = (A[iA]===B[iB] && A[iA+1]===B[iB+1] && A[iA+2]===B[iB+2] && A[iA+3]===B[iB+3]);
             diff = (A[iA]!==B[iB] || A[iA+1]!==B[iB+1] || A[iA+2]!==B[iB+2] || A[iA+3]!==B[iB+3]);
 
             if(diff || x>=wB || y>=hB){
